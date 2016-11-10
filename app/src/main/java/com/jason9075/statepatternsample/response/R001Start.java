@@ -21,7 +21,9 @@ public class R001Start extends ResponseAbstract {
     public ResponseAbstract userInputMessage(String userMessage) {
         switch (userMessage){
             case "1":
-                return new R002Buy(Arrays.asList("頻果","芭樂","香蕉"));
+                R002Buy buy = new R002Buy();
+                buy.setProducts(Arrays.asList("頻果","芭樂","香蕉"));
+                return buy;
             case "2":
                 return new R003Hot();
             case "3":

@@ -10,12 +10,17 @@ import java.util.List;
 public class R002Buy extends ResponseAbstract{
     private List<String> products = new ArrayList<>();
 
-    R002Buy(List<String> products) {
-        super("可以購買的東西如下:\n"+ makeListString(products));
-        this.products = products;
+    R002Buy() {
+        super("可以購買的東西如下:\n");
     }
 
-    private static String makeListString(List<String> products) {
+    public void setProducts(List<String> products) {
+        this.products = products;
+        responseMessage = "可以購買的東西如下:\n" + makeListString(products);
+    }
+
+    private String makeListString(List<String> products) {
+
         String output = "";
         for (int i = 0; i < products.size(); i++) {
             output += (i+1) + ". " + products.get(i)+"\n";

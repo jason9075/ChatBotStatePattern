@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 chatBot.userSay(binding.userEditText.getText().toString()); //把使用者的訊息傳給bot
                 chatBot.popUpResponse(); //叫bot 反應結果
+                binding.userEditText.setText("");
             }
         });
     }

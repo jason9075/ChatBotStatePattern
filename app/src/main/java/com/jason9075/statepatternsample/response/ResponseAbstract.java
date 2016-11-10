@@ -14,5 +14,6 @@ public abstract class ResponseAbstract {
         return responseMessage;
     }
 
+    /* 用於判斷使用者輸入的method */
     public abstract ResponseAbstract userInputMessage(String userMessage);
 }
